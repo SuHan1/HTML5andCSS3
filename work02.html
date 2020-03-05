@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        } 
+        .stu{
+            width:500px;
+            margin: 50px auto; 
+        }
+        fieldset {
+            width: 420px;
+            padding:15px 10px 15px 15px;
+        }
+        .leg{
+            color:red;
+            font-size: 20px;
+        }
+        input{
+            width: 400px;
+            height: 25px;
+            margin: 8px 0;
+        }
+        .inpt{
+            width:405px;
+            height:28px;
+        }
+        span{
+            color:red;
+            font-size: 20px;
+        }
+        .star{ 
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stu">
+        <h1>学生信息</h1><br>
+        <fieldset>
+            <legend class="leg">学生档案</legend>
+            <form>
+                姓名：<br/>
+                <input class="inp" type="text" name="name1" required placeholder="请输入姓名" /><span class="star">*</span><br/> 
+                学号：<br/>
+                <input class="inp" type="number" name="sno" required placeholder="请输入学号" /><span class="star">*</span><br/>  
+                手机号码：<br/>
+                <input class="inp" type="tel" name="tel1" required placeholder="请输入手机号" /><span class="star">*</span><br/> 
+                邮箱地址：<br/>
+                <input class="inpt" id="email" type="search" name="email1" required placeholder="请输入邮箱地址" list="emaillist" /> 
+                <datalist id="emaillist">
+                    <option value="*@qq.com"/>
+                    <option value="*@163.com"/>
+                    <option value="*@gmail.com"/>
+                    <option value="*@yahoo.com.cn"/>
+                    <option value="*@126.com"/>
+                </datalist>
+                <span class="eSp">*</span><br/> 
+                录取学校：<br/>
+                <input class="inpt" type="search" name="sch" list="schools"/>
+                <datalist id="schools">
+                    <option>河北师范大学</option>
+                    <option>河北科技大学</option>
+                </datalist>
+                <br/> 
+                入学成绩：<br/>
+                <input class="inp" type="number" name="sco" /><br/> 
+                入学时间：<br/>
+                <input class="inp" type="date" name="tos" /><br/>
+                <input class="inpt" type="submit" name="sub" />
+            </form>
+
+        </fieldset>
+    </div>
+</body>
+<script>
+    var email = document.getElementById("email");
+    var emaillist = document.getElementById("emaillist");
+    var option = document.getElementsByTagName("option");
+    email.oninput = function(){
+        var value = email.value;
+        var pattern = /(.*)(?=@)/;
+        for(var i = 0; i < option.length; i++){
+            option[i].value = option[i].value.replace(pattern, value);
+        }
+        emaillist.style.display = "block";
+    } 
+    email.onblur = function(){
+        emaillist.style.display = "none";
+    }
+</script>
+</html>
