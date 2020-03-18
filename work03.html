@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        fieldset{
+            width:1200px;
+            height:300px;
+            margin:0 auto;
+        }
+        legend{
+            color: red;
+            font-weight: bold;
+            font-size: 50px;
+            margin-left:30px;
+        }
+        .color{
+            width:1150px;
+            height:55px;
+            border:2px solid #ccc;
+            margin:20px auto;
+            position: relative;
+        }
+        li{
+            width:25px;
+            height:25px;
+            float: left;
+            margin: 15px 10px;
+        }
+        #word{
+            position: absolute;
+            top:40px;
+
+        } 
+        .bgc{
+            width:1100px;
+            height:100px;
+            margin:0 auto;
+            font-size:26px;
+            line-height: 40px;
+            background:darkgray;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>网页换肤</legend>
+        <div class="color">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <span id="word"></span>
+        </div>
+        <div class="bgc" id="bgc">
+            <p>LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+        </div>
+        
+    </fieldset>
+    
+</body>
+<script>
+    var cList = document.getElementsByTagName("li");
+    var bgc = document.getElementById("bgc");
+    var word = document.getElementById("word");
+    var color = ['darkgray', 'darkorchid', 'pink', 'cyan', 'yellow', 'springgreen'];
+    var words = ['灰色', '紫色', '粉色', '青色', '黄色', '绿色'];
+    var leftL = ['25px', '70px', '115px', '160px', '205px', '250px'];
+    for(var i = 0; i < cList.length; i++){
+        cList[i].style.background = color[i];
+    }  
+    if(!window.localStorage){
+        alert("您的浏览器不支持localStorage");
+    }
+    else{
+        if(!localStorage.getItem("index")){
+            cList[0].style.marginTop = "5px";
+        }
+        else{
+            bgc.style.background = localStorage.getItem("bgColor"); 
+            cList[parseInt(localStorage.getItem("index"))].style.marginTop = "5px";
+        }
+        for(var i = 0; i < cList.length; i++){
+            cList[i].idx = i;
+            cList[i].onclick = function(){
+                localStorage.setItem("index",this.idx);
+                var indx = parseInt(localStorage.getItem("index"));
+                localStorage.setItem("bgColor", String(cList[indx].style.background));
+                bgc.style.background = localStorage.getItem("bgColor");
+                for(var j = 0; j < cList.length; j++){
+                    cList[j].style.marginTop = "15px";
+                }
+                cList[indx].style.marginTop = "5px";
+            }
+        }
+    }
+    var index = 0;
+    for(var i = 0; i < cList.length; i++){
+        cList[i].idx = i;
+        cList[i].onmouseover = function(){
+            index = this.idx;
+            word.innerHTML = words[index];
+            word.style.border = "1px solid #aaa";
+            word.style.background="#eee";
+            word.style.left = leftL[index];
+        }
+        cList[i].onmouseout = function(){
+            index = this.idx;
+            word.innerHTML = "";
+            word.style.border = "";
+            word.style.background = "";
+        }
+    }
+</script>
+</html>
