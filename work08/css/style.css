@@ -1,0 +1,221 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container{
+    /* width: 1200px; */
+}
+
+/* 顶部黑色框 */    
+.bg1{
+    background: #282828;
+}
+.bg1 ul li{
+    float: right;
+    color: #e1e1e1;
+    font-size: 20px;
+    margin: 10px 0 0 15px;
+}
+.bg1 ul li a{
+    color: #e1e1e1;
+    font-size: 14px;
+}
+.bg1 ul li:nth-child(4){
+    margin-right: 30px;
+}
+
+/* 导航 */
+.bg2{
+    height: 79px;
+    background: #e1e1e1;
+}
+.navStyle{
+    background: #e1e1e1;
+    height: 79px;
+    /* border: none; */
+}
+#navLi li{
+    font-size: 20px;
+    padding: 15px 0 0 50px;
+}
+#navLi{
+    margin-left: 70px;
+}
+#navLi li a{
+    color: #000;
+}
+#navLi li a:hover{
+    color: #e8420a;
+    border-bottom: 4px solid #e8420a;
+}
+/* 搜索框 */
+.search{
+    width: 592px;
+    height: 58px;
+    position: relative;
+    top: -150px; 
+    margin: auto;
+}
+.search ul{
+    width: 592px;
+    height: 58px;
+    border: 4px solid rgba(0,0,0,0.5);
+    border-radius: 4px;
+
+}
+.search ul li{
+    float: left;
+
+}
+.search ul li:nth-child(1){
+    width: 146px;
+    height: 50px;
+    padding: 15px 0 0 60px;
+    border-radius: 3px 0 0 3px;
+    font-size: 18px;
+    color: #535353;
+    background: #d3d3d8 url(../img/position.png) no-repeat 20% 50%;
+}
+.search ul li input{
+    width: 310px;
+    height: 50px;
+    color: #a0a0a0;
+    font-size: 18px;
+
+}
+.search ul li:nth-child(3){
+    width: 128px;
+    height: 50px;
+    background: #cb5405 url(../img/search.png) no-repeat 50% 50%;
+    border-radius: 0 3px 3px 0;
+}
+
+@media screen and (min-width: 769px){
+    /* 黑色顶部框 */
+    .bg1{
+        width: 100%;
+        height: 45px;
+    }
+
+    /* 导航 */
+    .bg2{
+        height: 79px;
+        background: #e1e1e1;
+    }
+    .navStyle{
+        background: #e1e1e1;
+        height: 79px;
+        /* border: none; */
+    }
+    .navStyle div button{
+        width: 0;
+        height: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    /* 主图 */
+    .banner img{
+        width: 100%;
+    }
+    /* 主图文字 */
+    .word{
+        /* background: red; */
+        height: 170px;
+        color: #e0e0e0;
+        position: absolute;
+        top: 200px;
+        left: 190px;
+        overflow: hidden;
+    }
+    .word p{
+        font-size: 20px;
+        font-weight: lighter;
+    }
+    .word p:nth-child(1){
+        font-size: 48px;
+    }
+    .word p:nth-child(2){
+        width: 325px;
+        padding-top: 10px;
+        border-top: 1px solid #59595d;
+    }
+    .word p:nth-child(3){
+        width: 400px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #59595d;
+    }
+    .word2{
+        width: 0px;
+        height: 0;
+        overflow: hidden;
+    }
+
+}
+@media screen and (max-width:768px){
+    /* 黑色顶部框 */
+    .bg1{
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .bgTop{
+        width: 0px;
+    }   
+    /* 导航 */
+    .bg2{
+        height: 108px;
+        background: #fff;
+    }
+    .navStyle{
+        background: #fff;
+        height: 79px;
+        border: none;
+        position: relative;
+    }
+    .navStyle div button{
+        margin: 20px;
+    }
+    .navStyle div button:last-child{
+        width: 85px;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        background: #e8420a;
+        position: absolute;
+        right: 70px;
+    }
+    /* 主图 */
+    .banner{
+        width: 100%;
+        height: 400px;
+        /* overflow: hidden; */
+        background: url('../img/banner.jpg') no-repeat center;
+    }
+    .banner img{
+        width:0;
+        height:0;
+    }
+    /* 主图文字 */
+    .word{
+        height: 50px;
+        font-size: 40px;
+        color: #e0e0e0;
+        position: absolute;
+        top: 170px;
+        left: 60px;
+        overflow: hidden;
+        font-weight: lighter;
+    }
+    .word2{
+        font-size: 28px;
+        font-weight: lighter;
+        color: #e0e0e0;
+        position: absolute;
+        top: 240px;
+        left: 60px;
+        overflow: hidden;
+    }
+}
