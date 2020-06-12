@@ -295,10 +295,12 @@
 
     /* 使命与愿景 */
     .bg4{
-        background: url("../img/back.png") no-repeat center 480%;
+        background: url("../img/back.png") no-repeat center 670%;
+        background-size: 100%;
     }
     .bg5{
         background: url("../img/back.png") no-repeat center -32%;
+        background-size: 100%;
     }
     .mission{
         width: 1200px;
