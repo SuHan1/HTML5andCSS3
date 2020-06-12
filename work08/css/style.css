@@ -295,10 +295,10 @@
 
     /* 使命与愿景 */
     .bg4{
-        background: url("../img/back.png") no-repeat center 400%;
+        background: url("../img/back.png") no-repeat center 480%;
     }
     .bg5{
-        background: url("../img/back.png") no-repeat center -200%;
+        background: url("../img/back.png") no-repeat center -32%;
     }
     .mission{
         width: 1200px;
@@ -362,7 +362,6 @@
     .mission img{
         width: 1200px;
         height: 472px;
-        /* margin: 4px 0; */
     }
     /* 服务优势 */
     /* 盒子+文字 */
